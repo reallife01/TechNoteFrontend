@@ -10,7 +10,7 @@ const Public = () => {
       </header>
       <main className="public__main">
         <p>
-          Located in Lagos City, Don Whale Repairs provides a trained staff
+          Located in Lagos City, Lareal Repairs provides a trained staff
           ready to meet your tech repair needs.
         </p>
         <address className="public__addr">
