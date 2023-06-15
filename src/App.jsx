@@ -11,7 +11,8 @@ import {
   Prefetch,
   PersistLogin,
 } from "./features/index";
-// import PersistLogin from "./features/auth/PrefetchLogin";
+import RequireAuth from "./features/auth/RequireAuth";
+import {ROLES} from './config/roles.jsx'
 
 
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         {/* Protected Routes */}
+        <Route element={<RequireAuth  allowedRoles={[...Object.values(ROLES)]}/>}>
         <Route element={<PersistLogin />}>
         <Route element={<Prefetch />}>
           <Route path="/dash/" element={<DashLayout />}>
@@ -40,6 +42,7 @@ function App() {
           </Route>
         </Route>
         {/* end of dash */}
+      </Route>
       </Route>
       </Route>
     </Routes>
